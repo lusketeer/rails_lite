@@ -1,5 +1,6 @@
 module ActionControllerLite
   class Base
+    include Helper
     attr_reader :req, :res, :params
 
     # Setup the controller

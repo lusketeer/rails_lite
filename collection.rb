@@ -5,6 +5,7 @@ require 'sqlite3'
 require 'active_support/inflector'
 
 # Action Controller
+require_relative "lib/action_controller_lite/helper"
 require_relative "lib/action_controller_lite/base"
 require_relative "lib/action_controller_lite/param"
 require_relative "lib/action_controller_lite/session"

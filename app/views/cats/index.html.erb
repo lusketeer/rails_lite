@@ -1,3 +1,5 @@
 <% @cats.each do |cat| %>
-  <%= cat.name %>
+  <p>
+    <%= link_to cat.name, "/cats/#{cat.id}" %>
+  </p>
 <% end %>

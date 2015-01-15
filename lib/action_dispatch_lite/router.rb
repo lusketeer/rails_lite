@@ -66,7 +66,7 @@ module ActionDispatchLite
       "#{controller_name.capitalize}Controller".constantize
     end
 
-    def resources(controller_name, option = {only: [:index, :show, :new, :create, :edit, :update, :destroy]})
+    def resources(controller_name, options = {only: [:index, :show, :new, :create, :edit, :update, :destroy]})
       controller_class = controller_class(controller_name)
       patterns = {
         index:    "^/#{controller_name}$",
@@ -77,7 +77,7 @@ module ActionDispatchLite
         update:   "^/#{controller_name}/(?<id>\\d+)$",
         destroy:  "^/#{controller_name}/(?<id>\\d+)$"
       }
-      option[:only].each do |action|
+      options[:only].each do |action|
         self.send METHODS[action], Regexp.new(patterns[action]), controller_class, action
       end
       # # index
