@@ -1,1 +1,1 @@
-# rails_lite
+# Rails Lite
